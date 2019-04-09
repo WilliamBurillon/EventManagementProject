@@ -36,7 +36,7 @@ public class Bavard implements PapotageListener {
 
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
-		System.out.println("to : " + name );
+		
 		System.out.println(p);
 		
 	}

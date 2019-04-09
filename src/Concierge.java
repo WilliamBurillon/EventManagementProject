@@ -37,6 +37,7 @@ public class Concierge implements PapotageListener{
 		// TODO Auto-generated method stub
 		for (int i =0;i<this.l.size();i++) {
 			if (p.getEmetteur()!= this.l.get(i).getName()){
+				p.setRecepteur(this.l.get(i).getName());
 				this.l.get(i).onPapotageEvent(p);
 			}
 		}

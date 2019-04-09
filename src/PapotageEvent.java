@@ -6,7 +6,16 @@ public class PapotageEvent  extends EventObject{
 	private String sujet;
 	private String corps;
 	private String emetteur;
+	private String recepteur;
 	
+	public String getRecepteur() {
+		return recepteur;
+	}
+
+	public void setRecepteur(String recepteur) {
+		this.recepteur = recepteur;
+	}
+
 	public String getEmetteur() {
 		return emetteur;
 	}
@@ -17,6 +26,7 @@ public class PapotageEvent  extends EventObject{
 
 	public PapotageEvent(Object source) {
 		super(source);
+		this.recepteur="";
 	
 	}	
 	
@@ -24,8 +34,8 @@ public class PapotageEvent  extends EventObject{
 	
 	public String toString() {
 		
-		return "From :"+emetteur + "\n"+ "Subject : " + this.sujet + "\n"
-				+ "message : " + this.corps;
+		return "From :"+emetteur + "\n"+ "To : " + recepteur + "\n" + "Subject : " + this.sujet + "\n"
+				+ "message : \n" + this.corps;
 	}
 
 	public String getSujet() {
