@@ -1,23 +1,33 @@
+import java.util.ArrayList;
 
 public class Bavard implements PapotageListener {
-	private PapotageListener concierge;
+	private ArrayList<PapotageListener> concierge;
 	private String name;
 	
 	
 	public Bavard(String name, PapotageListener concierge) {
 		this.name = name;
-		this.concierge=concierge;
+		this.concierge=new ArrayList<PapotageListener>();
+		this.concierge.add(concierge);
 		
 	}
 	
-	public PapotageListener getConcierge() {
+	
+	/*public PapotageListener getConcierge() {
 		return concierge;
 	}
 
 	public void setConcierge(PapotageListener concierge) {
 		this.concierge = concierge;
 	}
-
+	*/
+	public void addConcierge(PapotageListener c) {
+		this.concierge.add(c);
+	}
+	public void removeConcierge(PapotageListener c) {
+		this.concierge.remove(c);
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -31,7 +41,10 @@ public class Bavard implements PapotageListener {
 		p.setCorps(corps);
 		p.setSujet(mess);
 		p.setEmetteur(this.name);
-		concierge.onPapotageEvent(p);
+		for (int i =0; i<concierge.size();i++) {
+			concierge.get(i).onPapotageEvent(p);
+		}
+		
 	}
 
 	@Override

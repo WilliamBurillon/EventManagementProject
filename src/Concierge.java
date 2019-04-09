@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 public class Concierge implements PapotageListener{
 
-	public ArrayList<Bavard> l;
-	
+	public ArrayList<PapotageListener> l;
+	public String name;
 	
 	
 	public Concierge() {
-		this.l  = new ArrayList<Bavard>();
+		this.l  = new ArrayList<PapotageListener>();
 		
 	}
 	
-	public void addBavard(Bavard b) {
+	public void addBavard(PapotageListener b) {
 		
 		
 		this.l.add(b);
@@ -28,10 +28,12 @@ public class Concierge implements PapotageListener{
 	}
 	
 	public void broadcastPapotageEvent(PapotageEvent p) {
-		
-		
-	
 	}
+	public String getName() {
+		return this.name;
+	}
+	
+	
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
 		// TODO Auto-generated method stub
