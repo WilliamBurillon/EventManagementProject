@@ -2,18 +2,19 @@ import java.util.ArrayList;
 public class Concierge implements PapotageListener{
 
 	public ArrayList<PapotageListener> l;
-	public String name;
+	private String name;
 	
 	
-	public Concierge() {
+	public Concierge(String name) {
 		this.l  = new ArrayList<PapotageListener>();
-		
+		this.name=name;
 	}
 	
 	public void addBavard(PapotageListener b) {
 		
 		
 		this.l.add(b);
+		System.out.println("a été ajouter ");
 		
 	}
 	
@@ -32,7 +33,8 @@ public class Concierge implements PapotageListener{
 	public String getName() {
 		return this.name;
 	}
-	
+
+
 	
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
@@ -44,6 +46,9 @@ public class Concierge implements PapotageListener{
 			}
 		}
 		
+	}
+	public String getMdp() {
+		return "oker";
 	}
 
 }

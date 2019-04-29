@@ -3,10 +3,14 @@ import java.util.ArrayList;
 public class Bavard implements PapotageListener {
 	private ArrayList<PapotageListener> concierge;
 	private String name;
+	private String mdp;
+	private String birth;
 	
 	
-	public Bavard(String name, PapotageListener concierge) {
+	public Bavard(String name,String mdp,String birth, PapotageListener concierge ) {
 		this.name = name;
+		this.mdp=mdp;
+		this.birth=birth;
 		this.concierge=new ArrayList<PapotageListener>();
 		this.concierge.add(concierge);
 		
@@ -27,7 +31,9 @@ public class Bavard implements PapotageListener {
 	public void removeConcierge(PapotageListener c) {
 		this.concierge.remove(c);
 	}
-	
+	public String getMdp() {
+		return mdp;
+	}
 	public String getName() {
 		return name;
 	}
