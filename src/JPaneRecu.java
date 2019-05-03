@@ -1,27 +1,36 @@
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-public class JPaneRecu extends JPanel{
+public class JPaneRecu extends JPanel implements ActionListener{
 		private JList j;
 		private PapotageListener b;
 		private JPanel messag;
+		private JTabbedPaneInterface jt;
+		private JButton but;
+		private JTextArea content;
+		//PapotageEvent[] message = new PapotageEvent[100];
 		//private MouseListener m = new MouseListener();
-	public JPaneRecu(PapotageListener b) {
-		
+	public JPaneRecu(PapotageListener b,JTabbedPaneInterface jt) {
+		this.jt = jt;
 		this.setLayout(null);
 		this.b=b;
 		this.setBounds(0, 0,  982, 705);
 		PapotageEvent[] message = new PapotageEvent[10];
-		System.out.println(b.getName());
+		System.out.println("taillle  ; " + b.getList().size());
 		for (int i =0; i < b.getList().size();i++) {
 			message[i]= b.getList().get(i);
+			
 		}
 		
 		
@@ -30,6 +39,7 @@ public class JPaneRecu extends JPanel{
 				this.messag = new JPanel();
 				messag.setLayout(null);
 				messag.setBounds(365, 20,605, 638);
+				messag.setBackground(Color.WHITE);
 				
 				
 				
@@ -55,7 +65,7 @@ public class JPaneRecu extends JPanel{
 				cont.setBounds(0,120,100,20);
 				JTextArea content = new JTextArea();
 				//JLabel content = new JLabel();
-				content.setBounds(5, 150, 595, 450);
+				content.setBounds(5, 145, 595, 450);
 				content.setLineWrap(true);
 				//content.setOpaque(true);
 				//content.setBackground(Color.RED);
@@ -65,6 +75,9 @@ public class JPaneRecu extends JPanel{
 		
 		
 		
+		this.but= new JButton("Refresh");
+		but.addActionListener(this);
+		but.setBounds(135,620,90,40);
 		
 		
 		
@@ -72,12 +85,12 @@ public class JPaneRecu extends JPanel{
 		
 		
 		
-		
-		j = new JList(message);
-		this.setBackground(Color.BLUE);
-		j.setBounds(5,5,350,668);
+		j = new JList(b.getList().toArray());
+		this.setBackground(Color.WHITE);
+		j.setBounds(5,5,350,600);
 		j.setFixedCellHeight(50);
 		j.setSelectedIndex(0);
+		//j.addNotify();
 		j.addMouseListener(new MouseListener() {
 
 			@Override
@@ -133,12 +146,33 @@ public class JPaneRecu extends JPanel{
 		//-------Add to the prinipal panel
 		this.add(j);
 		this.add(messag);
+		this.add(but);
+		
 		
 		
 	}
 	
-	public void getIndex() {
+	/*public void getIndex() {
 		System.out.println(j.getSelectedIndex());
 		//return null;
+	}*/
+
+	@Override
+	public void actionPerformed(ActionEvent clic) {
+		// TODO Auto-generated method stub
+		Object source = clic.getSource();
+		if(source==this.but) 
+			
+			this.add(j);
+			
+			System.out.println("avant ");
+			System.out.println("taillle  ; " + b.getList().size());
+		//	this.j.repaint();
+			this.j.setListData(b.getList().toArray());
+			//this.revalidate();
+		//	this.repaint();
+			
+			System.out.println("apres");
 	}
+	
 }

@@ -45,6 +45,7 @@ public class Concierge implements PapotageListener{
 			if (p.getEmetteur()!= this.l.get(i).getName()){
 				p.setRecepteur(this.l.get(i).getName());
 				this.l.get(i).onPapotageEvent(p);
+				this.l.get(i).onPapotageEventbool();
 			}
 		}
 		
@@ -57,6 +58,18 @@ public class Concierge implements PapotageListener{
 	public ArrayList<PapotageEvent> getList() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void generatePapotageEvent(String corps, String mess) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onPapotageEventbool() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 	
 }

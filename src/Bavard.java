@@ -73,6 +73,12 @@ public class Bavard implements PapotageListener {
 		list.add(p);
 		
 	}
+
+	@Override
+	public boolean onPapotageEventbool() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 	
 	
 	

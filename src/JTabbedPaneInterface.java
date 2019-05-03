@@ -12,7 +12,7 @@ public class JTabbedPaneInterface extends JFrame {
 	private PapotageListener b;
 	private JList liste;
 	private JPaneRecu messagesRecu;
-	private JPanel messageEnvoie = new JPanel();
+	private JPaneEnvoi messageEnvoie; 
 	
 	
 	public JTabbedPaneInterface(PapotageListener b) {	
@@ -23,7 +23,8 @@ public class JTabbedPaneInterface extends JFrame {
 		for(int i = 0; i<listeMessages.size();i++) {
 			choix[i] = " " + listeMessages.get(i).getEmetteur() + " : " +listeMessages.get(i).getSujet();
 			}*/
-		this.messagesRecu = new JPaneRecu(b);
+		this.messagesRecu = new JPaneRecu(b,this);
+		this.messageEnvoie=new JPaneEnvoi(b,this);
 		this.setBounds(0, 0, 1000, 750);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setVisible(true);
@@ -42,6 +43,11 @@ public class JTabbedPaneInterface extends JFrame {
 		//tabbedPane.setLayout(null);
 		this.getContentPane().add(tabbedPane);
 		
+	}
+	public void refreshMess() {
+		this.repaint();
+		this.revalidate();
+			
 	}
 }
 
