@@ -34,8 +34,8 @@ public class PapotageEvent  extends EventObject{
 	
 	public String toString() {
 		
-		return "From :"+emetteur + "\n"+ "To : " + recepteur + "\n" + "Subject : " + this.sujet + "\n"
-				+ "message : \n" + this.corps;
+		return "From :"+emetteur + "   "+  "Subject : " + this.sujet + "\n";
+				
 	}
 
 	public String getSujet() {

@@ -89,7 +89,7 @@ public class LoginPanel extends JPanel implements ActionListener {
 					for (int i =0; i< j.getConcierge().size();i++) {
 						for (int k=0;k<j.getConcierge().get(i).l.size();k++) {
 							if (nm.getText().equals(j.getConcierge().get(i).l.get(k).getName()) && pw.getText().equals(j.getConcierge().get(i).l.get(k).getMdp())) {
-								j.goToCoco();
+								j.goToCoco(j.getConcierge().get(i).l.get(k));
 							}
 							else {
 								System.out.println("ya pazs le sang");

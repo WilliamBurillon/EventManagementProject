@@ -22,6 +22,7 @@ public class WelcomeJFrame extends JFrame{
 	private LoginPanel lp = new LoginPanel(this);
 	private CocoPanel cc = new CocoPanel();
 	private JPanel lePanel = new JPanel();
+	private ArrayList<JTabbedPaneInterface> Jl = new ArrayList<JTabbedPaneInterface>();
 	//private ArrayList<Bavard> bv;
 	private ArrayList<Concierge> cge;
 	//private Concierge cge;
@@ -102,9 +103,13 @@ public class WelcomeJFrame extends JFrame{
 		this.setContentPane(this.lp);
 		this.revalidate();
 	}
-	public void goToCoco() {
-		this.setContentPane(this.cc);
+	public void goToCoco(PapotageListener b) {
+		//this.setContentPane(this.cc);
+		//this.revalidate();
+		this.setContentPane(wp);
 		this.revalidate();
+		JTabbedPaneInterface j = new JTabbedPaneInterface(b);
+		this.Jl.add(j);
 	}
 	
 	public ArrayList<Concierge> getConcierge() {

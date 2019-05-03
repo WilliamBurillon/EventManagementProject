@@ -5,6 +5,7 @@ public class Bavard implements PapotageListener {
 	private String name;
 	private String mdp;
 	private String birth;
+	private ArrayList<PapotageEvent> list= new ArrayList<PapotageEvent>();
 	
 	
 	public Bavard(String name,String mdp,String birth, PapotageListener concierge ) {
@@ -16,7 +17,9 @@ public class Bavard implements PapotageListener {
 		
 	}
 	
-	
+	public Bavard(String name ) {
+		this.name = name;
+	}
 	/*public PapotageListener getConcierge() {
 		return concierge;
 	}
@@ -44,19 +47,30 @@ public class Bavard implements PapotageListener {
 
 	public void generatePapotageEvent(String corps, String mess) {
 		PapotageEvent p = new PapotageEvent(this);
+		
 		p.setCorps(corps);
 		p.setSujet(mess);
 		p.setEmetteur(this.name);
 		for (int i =0; i<concierge.size();i++) {
 			concierge.get(i).onPapotageEvent(p);
+			System.out.println("sff");
 		}
 		
+	}
+	
+	public ArrayList<PapotageEvent> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<PapotageEvent> list) {
+		this.list = list;
 	}
 
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
 		
 		System.out.println(p);
+		list.add(p);
 		
 	}
 	

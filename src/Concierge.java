@@ -39,7 +39,9 @@ public class Concierge implements PapotageListener{
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
 		// TODO Auto-generated method stub
+		System.out.println("fsfsd");
 		for (int i =0;i<this.l.size();i++) {
+			
 			if (p.getEmetteur()!= this.l.get(i).getName()){
 				p.setRecepteur(this.l.get(i).getName());
 				this.l.get(i).onPapotageEvent(p);
@@ -51,4 +53,10 @@ public class Concierge implements PapotageListener{
 		return "oker";
 	}
 
+	@Override
+	public ArrayList<PapotageEvent> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
