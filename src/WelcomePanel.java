@@ -15,6 +15,7 @@ public class WelcomePanel extends JPanel implements ActionListener{
 		private WelcomeJFrame j;
 		private JButton creation;
 		private JButton login;
+		private JButton concierge;
 	public WelcomePanel(WelcomeJFrame j) {
 		this.j=j;
 		this.setLayout(null);
@@ -36,6 +37,10 @@ public class WelcomePanel extends JPanel implements ActionListener{
 		this.login = new JButton("Login");
 		login.setBounds(400, 480, 200, 70);;
 		login.addActionListener(this);
+		
+		this.concierge=new JButton("Conciergerie");
+		concierge.setBounds(50, 620, 150, 50);
+		concierge.addActionListener(this);
 		JLabel text = new JLabel("Welcome to the BAVARD NETWORK");
 		text.setBounds(60, 220, 1000, 100);
 		Font font = new Font("abadi mt", Font.BOLD,50);
@@ -44,6 +49,7 @@ public class WelcomePanel extends JPanel implements ActionListener{
 		this.add(login);
 		this.add(text);
 		this.add(imageI);
+		this.add(concierge);
 	}
 	public void goToSubsrcibe() {
 		//System.out.println("ouloulou");
@@ -72,6 +78,9 @@ public class WelcomePanel extends JPanel implements ActionListener{
 		else if (source == login){
 			
 			this.goToLogin();
+		}
+		else if(source == concierge) {
+		//	this.goToConcierge();
 		}
 
 		//System.out.println(clic.equals(login));

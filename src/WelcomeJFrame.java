@@ -22,6 +22,7 @@ public class WelcomeJFrame extends JFrame{
 	private LoginPanel lp = new LoginPanel(this);
 	private CocoPanel cc = new CocoPanel();
 	private JPanel lePanel = new JPanel();
+	//private 
 	private ArrayList<JTabbedPaneInterface> Jl = new ArrayList<JTabbedPaneInterface>();
 	//private ArrayList<Bavard> bv;
 	private ArrayList<Concierge> cge;

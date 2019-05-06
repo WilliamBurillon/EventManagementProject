@@ -64,7 +64,7 @@ public class JPaneEnvoi extends JPanel implements ActionListener{
 			// TODO Auto-generated method stub
 			Object source = clic.getSource();
 			if(source == env) {
-				this.b.generatePapotageEvent(lobj.getText(), content.getText());
+				this.b.generatePapotageEvent( content.getText(),lobj.getText());
 			}
 			
 		}

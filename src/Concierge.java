@@ -3,6 +3,7 @@ public class Concierge implements PapotageListener{
 
 	public ArrayList<PapotageListener> l;
 	private String name;
+	private String mdp;
 	
 	
 	public Concierge(String name) {

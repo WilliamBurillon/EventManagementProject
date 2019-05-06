@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 public class JPaneRecu extends JPanel implements ActionListener{
@@ -19,6 +21,7 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		private JTabbedPaneInterface jt;
 		private JButton but;
 		private JTextArea content;
+		private JScrollPane sp;
 		//PapotageEvent[] message = new PapotageEvent[100];
 		//private MouseListener m = new MouseListener();
 	public JPaneRecu(PapotageListener b,JTabbedPaneInterface jt) {
@@ -81,6 +84,7 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		
 		
 		
+		//JScrollPane scrollPane = new JScrollPane();
 		
 		
 		
@@ -90,7 +94,12 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		j.setBounds(5,5,350,600);
 		j.setFixedCellHeight(50);
 		j.setSelectedIndex(0);
+		//scrollPane.setViewportView(j);
+	//	scrollPane.setBounds(5, 5, 350, 600);
 		//j.addNotify();
+		//this.sp = new JScrollPane(j);
+		
+	//sp.setBounds(5, 5, 350, 600);
 		j.addMouseListener(new MouseListener() {
 
 			@Override
@@ -125,7 +134,7 @@ public class JPaneRecu extends JPanel implements ActionListener{
 					System.out.println(e.toString());
 					} 
 				}
-
+		
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
@@ -133,9 +142,11 @@ public class JPaneRecu extends JPanel implements ActionListener{
 			}
 			
 		});
+		//JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+          //      sp,
+         //      j);
 		
-		
-		
+		 	
 		messag.add(titre);		
 		messag.add(de);
 		messag.add(obj);
@@ -144,11 +155,12 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		messag.add(obje);	
 		messag.add(content);
 		//-------Add to the prinipal panel
-		this.add(j);
+		
 		this.add(messag);
 		this.add(but);
-		
-		
+		//this.add(sp);
+		this.add(j);
+		//this.add(splitPane);
 		
 	}
 	
@@ -169,6 +181,10 @@ public class JPaneRecu extends JPanel implements ActionListener{
 			System.out.println("taillle  ; " + b.getList().size());
 		//	this.j.repaint();
 			this.j.setListData(b.getList().toArray());
+			
+			//sp.repaint();
+			//sp.validate();
+			
 			//this.revalidate();
 		//	this.repaint();
 			
