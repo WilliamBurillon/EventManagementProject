@@ -43,7 +43,7 @@ public class WelcomeJFrame extends JFrame{
 		this.setTitle("Bavard Network");
 		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
-		
+		this.setResizable(false);
 		//this.lePanel=new JPanel();
 		
 		

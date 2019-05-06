@@ -45,6 +45,7 @@ public class LoginPanel extends JPanel implements ActionListener {
 			
 			this.nm = new JTextField();
 			nm.setBounds(POSITIONX+120, 265, 250, 35);
+			nm.setText("");
 			
 			this.pw = new JTextField();
 			pw.setBounds(POSITIONX+120, 365, 250, 35);

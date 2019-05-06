@@ -29,6 +29,7 @@ public class JTabbedPaneInterface extends JFrame {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setVisible(true);
 		this.setTitle("Papoteur Interface de " + b.getName());
+		this.setResizable(false);
 		//messagesRecu.setLayout(null);
 		/*this.liste = new JList(choix);
 		this.liste.setBounds(5,5,350,680);

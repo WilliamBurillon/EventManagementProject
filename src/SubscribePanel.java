@@ -60,6 +60,7 @@ public class SubscribePanel extends JPanel implements ActionListener {
 		
 		this.nm = new JTextField();
 		nm.setBounds(POSITIONX+120, 245, 250, 35);
+		nm.setText("");
 		
 		this.pw = new JTextField();
 		pw.setBounds(POSITIONX+120, 325, 250, 35);

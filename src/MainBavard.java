@@ -12,14 +12,14 @@ public class MainBavard {
 		Concierge c = new Concierge("Coco","1");
 		Concierge b = new Concierge("Bubu","2");
 		
-		Bavard b1 = new Bavard("jean","454","4545",c);
+		//Bavard b1 = new Bavard("jean","454","4545",c);
 
 		
-		Bavard b2 = new Bavard("a","a","454",c);
+		//Bavard b2 = new Bavard("a","a","454",c);
 		
 //	System.out.println(	b2.getList().size());
 		//Bavard b3 = new Bavard("jacques",c);
-		c.addBavard(b1);
+	/*	c.addBavard(b1);
 		c.addBavard(b2);
 		//c.addBavard(b3);
 		cge.add(c);
@@ -28,10 +28,10 @@ public class MainBavard {
 		//bv.add(b3);*/
 		cge.add(c);
 		cge.add(b);
-		System.out.println(cge.get(0).l.size());
+	//	System.out.println(cge.get(0).l.size());
 		//cge.get(0).addBavard(b1);
 	//	cge.get(0).addBavard(b2);
-		System.out.println(cge.get(0).l.size());
+		//System.out.println(cge.get(0).l.size());
 		
 		WelcomeJFrame jf= new WelcomeJFrame(cge);
 	/*	b1.generatePapotageEvent("you", "popo");

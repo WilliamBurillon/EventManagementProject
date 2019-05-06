@@ -26,6 +26,7 @@ public class ConciergeFrame extends JFrame implements ActionListener{
 		this.setVisible(true);
 		this.setTitle("Concierge Interface de " + j.getName());
 		this.setBackground(Color.BLUE);
+		this.setResizable(false);
 		JLabel title = new JLabel("Papoteur List : ");
 		title.setBounds(100, 0, 1000, 100);
 		Font font = new Font("abadi mt", Font.BOLD,20);
