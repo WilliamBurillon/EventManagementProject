@@ -7,7 +7,13 @@ public class Bavard implements PapotageListener {
 	private String birth;
 	private ArrayList<PapotageEvent> list= new ArrayList<PapotageEvent>();
 	
-	
+	public Bavard() {
+		this.name=null;
+		this.mdp=null;
+		this.concierge= null;
+		this.birth=null;
+		this.list = null;
+	}
 	public Bavard(String name,String mdp,String birth, PapotageListener concierge ) {
 		this.name = name;
 		this.mdp=mdp;
@@ -65,6 +71,9 @@ public class Bavard implements PapotageListener {
 	public void setList(ArrayList<PapotageEvent> list) {
 		this.list = list;
 	}
+	public String toString() {
+		return this.name;
+	}
 
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
@@ -78,6 +87,12 @@ public class Bavard implements PapotageListener {
 	public boolean onPapotageEventbool() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	@Override
+	public ArrayList<PapotageListener> getListLis() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

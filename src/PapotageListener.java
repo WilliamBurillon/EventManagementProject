@@ -7,4 +7,6 @@ public interface PapotageListener {
 	public String getMdp();
 	public ArrayList<PapotageEvent> getList();
 	public void generatePapotageEvent(String corps, String mess);
+	public ArrayList<PapotageListener> getListLis();
+	
 }

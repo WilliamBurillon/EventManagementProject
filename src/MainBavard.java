@@ -9,23 +9,23 @@ public class MainBavard {
 		ArrayList<Bavard> bv = new ArrayList<Bavard>();
 		ArrayList<Concierge> cge =  new ArrayList<Concierge>();
 		
-		Concierge c = new Concierge("Coco");
-		Concierge b = new Concierge("Bubu");
+		Concierge c = new Concierge("Coco","1");
+		Concierge b = new Concierge("Bubu","2");
 		
-		//Bavard b1 = new Bavard("jean","454","4545",c);
+		Bavard b1 = new Bavard("jean","454","4545",c);
 
 		
-		//Bavard b2 = new Bavard("a","a","454",c);
+		Bavard b2 = new Bavard("a","a","454",c);
 		
 //	System.out.println(	b2.getList().size());
 		//Bavard b3 = new Bavard("jacques",c);
-	/*	c.addBavard(b1);
+		c.addBavard(b1);
 		c.addBavard(b2);
-		c.addBavard(b3);
+		//c.addBavard(b3);
 		cge.add(c);
 		bv.add(b1);
 		bv.add(b2);
-		bv.add(b3);*/
+		//bv.add(b3);*/
 		cge.add(c);
 		cge.add(b);
 		System.out.println(cge.get(0).l.size());

@@ -6,9 +6,10 @@ public class Concierge implements PapotageListener{
 	private String mdp;
 	
 	
-	public Concierge(String name) {
+	public Concierge(String name,String mdp) {
 		this.l  = new ArrayList<PapotageListener>();
 		this.name=name;
+		this.mdp=mdp;
 	}
 	
 	public void addBavard(PapotageListener b) {
@@ -52,7 +53,7 @@ public class Concierge implements PapotageListener{
 		
 	}
 	public String getMdp() {
-		return "oker";
+		return this.mdp;
 	}
 
 	@Override
@@ -60,7 +61,10 @@ public class Concierge implements PapotageListener{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	public ArrayList<PapotageListener> getListLis(){
+		return this.l;
+	}
 	@Override
 	public void generatePapotageEvent(String corps, String mess) {
 		// TODO Auto-generated method stub
@@ -72,5 +76,6 @@ public class Concierge implements PapotageListener{
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
 	
 }

@@ -22,7 +22,8 @@ public class WelcomeJFrame extends JFrame{
 	private LoginPanel lp = new LoginPanel(this);
 	private CocoPanel cc = new CocoPanel();
 	private JPanel lePanel = new JPanel();
-	//private 
+	private ConciergePanel cP = new ConciergePanel(this);
+	
 	private ArrayList<JTabbedPaneInterface> Jl = new ArrayList<JTabbedPaneInterface>();
 	//private ArrayList<Bavard> bv;
 	private ArrayList<Concierge> cge;
@@ -112,7 +113,11 @@ public class WelcomeJFrame extends JFrame{
 		JTabbedPaneInterface j = new JTabbedPaneInterface(b);
 		this.Jl.add(j);
 	}
-	
+	public void goToConcierge() {
+		this.setContentPane(cP);
+		this.revalidate();
+		
+	}
 	public ArrayList<Concierge> getConcierge() {
 		return this.cge;
 	}
@@ -120,6 +125,14 @@ public class WelcomeJFrame extends JFrame{
 		
 		this.setContentPane(this.wp);
 		this.revalidate();
+	}
+	public void conciergeInter(Concierge b) {
+		this.setContentPane(wp);
+		this.revalidate();
+		System.out.println("gosjglkjsdlkgjsdk");
+		ConciergeFrame cg = new ConciergeFrame(b);
+		
+		
 	}
 	/*@Override
 	 public void actionPerformed(ActionEvent clic) {

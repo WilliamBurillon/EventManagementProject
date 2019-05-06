@@ -80,7 +80,7 @@ public class WelcomePanel extends JPanel implements ActionListener{
 			this.goToLogin();
 		}
 		else if(source == concierge) {
-		//	this.goToConcierge();
+			this.j.goToConcierge();
 		}
 
 		//System.out.println(clic.equals(login));
