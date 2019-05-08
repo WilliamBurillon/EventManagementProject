@@ -1,6 +1,7 @@
 import javax.swing.JFrame;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -151,14 +152,29 @@ public class SubscribePanel extends JPanel implements ActionListener {
 				if (j.getConcierge().get(i).getName()==jc.getSelectedItem()) {
 					c = j.getConcierge().get(i);
 					Bavard b = new Bavard(nm.getText(),pw.getText(),year.getText(),c,null);
-					j.addBavard(c, b);
-					for (int j =0; j<c.l.size();j++) {
-					System.out.println(c.l.get(j).getName());
+					boolean est_pasDedans = true;
+					for (int k=0; k<c.l.size();k++) {
+						if (b.getName().equals(c.l.get(k).getName()) &&b.getMdp().equals(c.l.get(k).getMdp() )) {
+							System.out.println("est dedans");
+							est_pasDedans = false;
+							JOptionPane p = new JOptionPane();
+							p.showMessageDialog(this,
+								    "Account still exists",
+								    "",
+								    JOptionPane.ERROR_MESSAGE);
+						}
 					}
+					if (est_pasDedans) {
+						j.addBavard(c, b);
+						
+					}
+					
 					
 					for (int j =0; j<c.l.size();j++) {
 					System.out.println(c.l.get(j).getName());
 					}
+					
+					
 				}
 			}
 			
