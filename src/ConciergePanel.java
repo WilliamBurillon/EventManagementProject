@@ -80,7 +80,7 @@ public class ConciergePanel extends JPanel  implements ActionListener{
 		
 	}
 	 public void actionPerformed(ActionEvent clic) {
-	      //Appelle la méthode de changement de panel
+	      //this method manage the different button 
 			Object source = clic.getSource();
 			if (source == back) {
 				j.goToMenu();
@@ -89,21 +89,18 @@ public class ConciergePanel extends JPanel  implements ActionListener{
 				
 			}else if(source == sub){
 				System.out.println("oker");
-				
+				// this part create a new JFram in relation with the current caretaker
 				for (int i =0; i< j.getConcierge().size();i++) {
 					
 						if (nm.getText().equals(j.getConcierge().get(i).getName()) && pw.getText().equals(j.getConcierge().get(i).getMdp())) {
-							//j.goToCoco(j.getConcierge().get(i).l.get(k));
-							//rempalcer pour interface utilisateur 
-							System.out.println();
+							
 							j.conciergeInter(j.getConcierge().get(i));
 							break;
 							
 						}
-						else {
-							//System.out.println("ya pazs le sang");
-						}
+						
 					}
+				// refresh the text field
 				nm.setText("");
 				pw.setText("");
 				

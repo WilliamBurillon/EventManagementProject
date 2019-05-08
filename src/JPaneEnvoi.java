@@ -40,10 +40,9 @@ public class JPaneEnvoi extends JPanel implements ActionListener{
 			cont.setBounds(0,60,170,20);
 			
 			
-			//JTextField content = new JTextField();
-			//content.setBounds(20,80,910,560);
+	
 			this.content = new JTextArea();
-			//JLabel content = new JLabel();
+		
 			content.setBounds(30,90,910,500);
 			content.setLineWrap(true);
 			
@@ -61,7 +60,7 @@ public class JPaneEnvoi extends JPanel implements ActionListener{
 		}
 		@Override
 		public void actionPerformed(ActionEvent clic) {
-			// TODO Auto-generated method stub
+			// this function generate a Papotage Event
 			Object source = clic.getSource();
 			if(source == env) {
 				this.b.generatePapotageEvent( content.getText(),lobj.getText());

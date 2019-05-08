@@ -30,11 +30,6 @@ public class JTabbedPaneInterface extends JFrame {
 	public JTabbedPaneInterface(PapotageListener b) {	
 		this.setLayout(null);
 		this.b = b;		
-		/*ArrayList<PapotageEvent> listeMessages = this.b.getMessages();
-		String[] choix = new String[20];
-		for(int i = 0; i<listeMessages.size();i++) {
-			choix[i] = " " + listeMessages.get(i).getEmetteur() + " : " +listeMessages.get(i).getSujet();
-			}*/
 		this.messagesRecu = new JPaneRecu(b,this);
 		this.messageEnvoie=new JPaneEnvoi(b,this);
 		this.setBounds(0, 0, 1000, 750);
@@ -42,18 +37,11 @@ public class JTabbedPaneInterface extends JFrame {
 		this.setVisible(true);
 		this.setTitle("Papoteur Interface de " + b.getName());
 		this.setResizable(false);
-		//messagesRecu.setLayout(null);
-		/*this.liste = new JList(choix);
-		this.liste.setBounds(5,5,350,680);
-		this.liste.setFixedCellHeight(50);
-		this.liste.setSelectedIndex(0);
-		messagesRecu.setBackground(Color.BLUE);
-		messagesRecu.add(this.liste);*/
-		//this.setBackground(Color.BLUE);
+
 		tabbedPane.setBounds(0, 0, 982, 705);
 		tabbedPane.addTab("Boîte de réception", messagesRecu);		
 		tabbedPane.addTab("Envoyer un message", messageEnvoie);
-		//tabbedPane.setLayout(null);
+
 		this.getContentPane().add(tabbedPane);
 		
 	}
@@ -66,7 +54,6 @@ public class JTabbedPaneInterface extends JFrame {
 		return this.b;
 	}
 	public void reload() {
-		System.out.println("okeeeeeeeeeeeeeeeeeeeeeeeeeeeeerr");
 		this.messagesRecu.repaint();
 	}
 }

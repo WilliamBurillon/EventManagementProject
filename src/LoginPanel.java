@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -89,16 +90,26 @@ public class LoginPanel extends JPanel implements ActionListener {
 				
 					
 				}else if(source == sub){
-					System.out.println("oker");
+					boolean find = false;
 					for (int i =0; i< j.getConcierge().size();i++) {
 						for (int k=0;k<j.getConcierge().get(i).l.size();k++) {
 							if (nm.getText().equals(j.getConcierge().get(i).l.get(k).getName()) && pw.getText().equals(j.getConcierge().get(i).l.get(k).getMdp())) {
 								j.goToCoco(j.getConcierge().get(i).l.get(k));
+								find = true;
+								break;
 							}
-							else {
-								System.out.println("ya pazs le sang");
-							}
+							
 						}
+					}
+					if (!find) {
+						
+							JOptionPane p = new JOptionPane();
+							p.showMessageDialog(this,
+								    "This account doesn't exist",
+								    "",
+								    JOptionPane.ERROR_MESSAGE);
+							
+						
 					}
 					nm.setText("");
 					pw.setText("");

@@ -32,8 +32,7 @@ public class WelcomePanel extends JPanel implements ActionListener{
 		
 		creation.addActionListener(this);
 		
-		//creation.set
-		//creation.setBounds(50, 50, this.getWidth()/10, this.getHeight()/10);
+	
 		this.login = new JButton("Login");
 		login.setBounds(400, 480, 200, 70);;
 		login.addActionListener(this);
@@ -52,17 +51,11 @@ public class WelcomePanel extends JPanel implements ActionListener{
 		this.add(concierge);
 	}
 	public void goToSubsrcibe() {
-		//System.out.println("ouloulou");
-	//	this.setContentPane(this.sp);
 		
-		//this.revalidate();
 		this.j.goToSubscribe();
 	}
 	public void goToLogin() {
-		//System.out.println("ouloulou");
-	//	this.setContentPane(this.sp);
-		
-		//this.revalidate();
+
 		this.j.goToLogin();
 	
 	}
@@ -83,7 +76,6 @@ public class WelcomePanel extends JPanel implements ActionListener{
 			this.j.goToConcierge();
 		}
 
-		//System.out.println(clic.equals(login));
-		//this.goToSubrcibe();
+	
    }
 }

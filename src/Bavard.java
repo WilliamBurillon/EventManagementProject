@@ -6,6 +6,7 @@ public class Bavard implements PapotageListener {
 	private String mdp;
 	private String birth;
 	private ArrayList<PapotageEvent> list= new ArrayList<PapotageEvent>();
+	// this attribute is use to refresh the receive pane when a papotageEvent come
 	private PapotageListener paneRecu;
 	
 	public Bavard() {
@@ -30,14 +31,7 @@ public class Bavard implements PapotageListener {
 	public void setPane(PapotageListener pane) {
 		this.paneRecu=pane;
 	}
-	/*public PapotageListener getConcierge() {
-		return concierge;
-	}
-
-	public void setConcierge(PapotageListener concierge) {
-		this.concierge = concierge;
-	}
-	*/
+	
 	public void addConcierge(PapotageListener c) {
 		this.concierge.add(c);
 	}
@@ -56,6 +50,7 @@ public class Bavard implements PapotageListener {
 	}
 
 	public void generatePapotageEvent(String corps, String mess) {
+		//this function send the message generate by this bavard to the caretakers
 		PapotageEvent p = new PapotageEvent(this);
 		
 		p.setCorps(corps);
@@ -82,7 +77,9 @@ public class Bavard implements PapotageListener {
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
 		
-		System.out.println(p);
+		// this function is used when the bavard receive a message
+		// the message is added to it list of PapotageEvent (for the display on the JPaneRecu interface)
+		//and also this function refresh the JList(PapotageEvent) from the JPaneRecu 
 		list.add(p);
 		paneRecu.onPapotageEvent(p);
 		
@@ -100,29 +97,10 @@ public class Bavard implements PapotageListener {
 		// TODO Auto-generated method stub
 		return null;
 	}
-/*	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public String getMdp() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public src.ArrayList<PapotageEvent> getList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public src.ArrayList<PapotageListener> getListLis() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-	
+
 	
 	public void removeConcierge(Concierge c) {
+		// this function is used to remove the connection from the bavard to the caretaker
 		for (int i=0; i<this.concierge.size();i++) {
 			if (c.getName().equals(this.concierge.get(i).getName())){
 				concierge.remove(concierge.get(i));

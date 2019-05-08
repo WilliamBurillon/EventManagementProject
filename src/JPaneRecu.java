@@ -22,8 +22,7 @@ public class JPaneRecu extends JPanel implements ActionListener,PapotageListener
 		private JButton but;
 		private JTextArea content;
 		private JScrollPane sp;
-		//PapotageEvent[] message = new PapotageEvent[100];
-		//private MouseListener m = new MouseListener();
+		
 	public JPaneRecu(PapotageListener b,JTabbedPaneInterface jt) {
 		this.jt = jt;
 		this.setLayout(null);
@@ -67,14 +66,8 @@ public class JPaneRecu extends JPanel implements ActionListener,PapotageListener
 				JLabel cont = new JLabel("Contenu : ");
 				cont.setBounds(0,120,100,20);
 				JTextArea content = new JTextArea();
-				//JLabel content = new JLabel();
 				content.setBounds(5, 145, 595, 450);
 				content.setLineWrap(true);
-				//content.setOpaque(true);
-				//content.setBackground(Color.RED);
-				//content.
-				
-		
 		
 		
 		
@@ -90,16 +83,11 @@ public class JPaneRecu extends JPanel implements ActionListener,PapotageListener
 		j = new JList(b.getList().toArray());
 		System.out.println("la gros taill " + b.getList().size());
 		this.setBackground(Color.WHITE);
-		//j.setBounds(5,5,350,600);
+
 		j.setFixedCellHeight(50);
 		j.setSelectedIndex(0);
 		
-		//scrollPane.setViewportView(j);
-	//	scrollPane.setBounds(5, 5, 350, 600);
-		//j.addNotify();
-		//this.sp = new JScrollPane(j);
 		
-	//sp.setBounds(5, 5, 350, 600);
 		j.addMouseListener(new MouseListener() {
 
 			@Override
@@ -123,7 +111,8 @@ public class JPaneRecu extends JPanel implements ActionListener,PapotageListener
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				// TODO Auto-generated method stub
+
+				//function made to refresh the panel which content the details of the selected message
 				try {
 				int selected_value = j.getSelectedIndex();
 				vient.setText(b.getList().get(selected_value).getEmetteur());
@@ -145,15 +134,7 @@ public class JPaneRecu extends JPanel implements ActionListener,PapotageListener
 		this.sp = new JScrollPane(j);
 		sp.setBounds(5,5,350,600);
 		sp.setBackground(Color.BLUE);
-	//	sp.setLayout(null);
-		//sp.setVisible(true);
-		
-		//sp.add(j);
-		//JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
-          //      sp,
-         //      j);
-		
-		 	
+
 		messag.add(titre);		
 		messag.add(de);
 		messag.add(obj);
@@ -166,48 +147,34 @@ public class JPaneRecu extends JPanel implements ActionListener,PapotageListener
 		this.add(messag);
 		this.add(but);
 		this.add(sp);
-		//this.add(j);
-		//this.add(splitPane);
+
 		
 	}
 	
-	/*public void getIndex() {
-		System.out.println(j.getSelectedIndex());
-		//return null;
-	}*/
+
 
 	@Override
 	public void actionPerformed(ActionEvent clic) {
 		// TODO Auto-generated method stub
 		Object source = clic.getSource();
 		if(source==this.but) 
+			//reload the frame
 			
 			
-			
-			System.out.println("avant ");
-			System.out.println("taillle  ; " + b.getList().size());
-		//	this.j.repaint();
+		
 			this.j.setListData(b.getList().toArray());
-			//this.repaint();
-			//this.validate();
+		
 			this.jt.reload();
-			//this.sp.revalidate();
-			//sp.repaint();
-			//sp.validate();
+	
 			
-			//this.revalidate();
-		//	this.repaint();
-			
-			System.out.println("apres");
 	}
 
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
 		// TODO Auto-generated method stub
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+	
 		this.j.setListData(b.getList().toArray());
-		//this.repaint();
-		//this.validate();
+		
 		this.jt.reload();
 	}
 

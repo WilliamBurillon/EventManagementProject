@@ -35,18 +35,13 @@ public class ConciergeFrame extends JFrame implements ActionListener{
 		this.lePanel=new JPanel();
 		lePanel.setLayout(null);
 		
-		//Jl avec liste des personnes qui sont abonnés a lui
+		
 		jl = new JList(j.getListLis().toArray());
 		
 		jl.setBounds(20,80,590,600);
 		jl.setFixedCellHeight(50);
 		jl.setSelectedIndex(0);
-		//scrollPane.setViewportView(j);
-	//	scrollPane.setBounds(5, 5, 350, 600);
-		//j.addNotify();
-		//this.sp = new JScrollPane(j);
-		
-	//sp.setBounds(5, 5, 350, 600);
+	
 		jl.addMouseListener(new MouseListener() {
 
 			@Override
@@ -71,16 +66,7 @@ public class ConciergeFrame extends JFrame implements ActionListener{
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-			/*	try {
-				int selected_value = j.getSelectedIndex();
-				vient.setText(b.getList().get(selected_value).getEmetteur());
-				obje.setText(b.getList().get(selected_value).getSujet());
-				content.setText(b.getList().get(selected_value).getCorps());
-				}
-				catch  (Exception e){
-					System.out.println(e.toString());
-					} */
-				
+			
 				try {
 					int selected_value = jl.getSelectedIndex();
 					selectBavard = j.getListLis().get(selected_value);
@@ -119,8 +105,9 @@ public class ConciergeFrame extends JFrame implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent click) {
-		// TODO Auto-generated method stub
 		
+		//this function is used to remove a bavard from the system related to a caretaker
+	
 		Object source = click.getSource();
 		if(source == remove) {
 			j.removeBavard(this.selectBavard.getName());

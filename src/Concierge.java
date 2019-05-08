@@ -40,7 +40,8 @@ public class Concierge implements PapotageListener{
 	
 	@Override
 	public void onPapotageEvent(PapotageEvent p) {
-		// TODO Auto-generated method stub
+		//when the caretaker receive the message, he broadcast the message to all his subscriber, expect the 
+		// subscriber who had writted the message
 		System.out.println("fsfsd");
 		for (int i =0;i<this.l.size();i++) {
 			
