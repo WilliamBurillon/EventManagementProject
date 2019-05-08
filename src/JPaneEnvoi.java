@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -65,6 +65,14 @@ public class JPaneEnvoi extends JPanel implements ActionListener{
 			Object source = clic.getSource();
 			if(source == env) {
 				this.b.generatePapotageEvent( content.getText(),lobj.getText());
+				JOptionPane p = new JOptionPane();
+				p.showMessageDialog(this,
+					    "Papotage send",
+					    "",
+					    JOptionPane.PLAIN_MESSAGE);
+				this.content.setText("");
+				this.lobj.setText("");
+				
 			}
 			
 		}

@@ -84,6 +84,9 @@ public class LoginPanel extends JPanel implements ActionListener {
 				Object source = clic.getSource();
 				if (source == back) {
 					j.goToMenu();
+					nm.setText("");
+					pw.setText("");
+				
 					
 				}else if(source == sub){
 					System.out.println("oker");
@@ -97,6 +100,9 @@ public class LoginPanel extends JPanel implements ActionListener {
 							}
 						}
 					}
+					nm.setText("");
+					pw.setText("");
+					
 				}
 			}
 }

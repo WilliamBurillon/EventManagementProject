@@ -135,10 +135,12 @@ public class SubscribePanel extends JPanel implements ActionListener {
 		Object source = clic.getSource();
 		if (source == back) {
 			j.goToMenu();
-			
+			nm.setText("");
+			pw.setText("");
+			year.setText("");
 		}
 		else if (source == sub) {
-			System.out.println("add ");
+			//System.out.println("add ");
 			
 			
 			//j.addBavard(j.getConcierge(),b );
@@ -153,10 +155,16 @@ public class SubscribePanel extends JPanel implements ActionListener {
 					for (int j =0; j<c.l.size();j++) {
 					System.out.println(c.l.get(j).getName());
 					}
+					
+					for (int j =0; j<c.l.size();j++) {
+					System.out.println(c.l.get(j).getName());
+					}
 				}
 			}
 			
-		
+		nm.setText("");
+		pw.setText("");
+		year.setText("");
 			
 		}
 	}

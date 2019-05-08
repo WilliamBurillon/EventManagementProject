@@ -76,6 +76,12 @@ public class Concierge implements PapotageListener{
 		// TODO Auto-generated method stub
 		return true;
 	}
+
+	@Override
+	public void removeConcierge(Concierge c) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

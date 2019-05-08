@@ -130,7 +130,7 @@ public class WelcomeJFrame extends JFrame{
 		this.setContentPane(wp);
 		this.revalidate();
 		System.out.println("gosjglkjsdlkgjsdk");
-		ConciergeFrame cg = new ConciergeFrame(b);
+		ConciergeFrame cg = new ConciergeFrame(b,this);
 		
 		
 	}
@@ -152,4 +152,12 @@ public class WelcomeJFrame extends JFrame{
 	public SubscribePanel getSP() {
 		return sp;
 	}
+	public void closeBavardInterface(PapotageListener p) {
+		for (int i =0;i<this.Jl.size();i++) {
+			if (Jl.get(i).getPapoteur().equals(p)) {
+				Jl.get(i).dispose();
+				Jl.remove(Jl.get(i));
+			}
 }
+	}}
+

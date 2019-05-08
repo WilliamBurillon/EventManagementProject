@@ -50,6 +50,9 @@ public class JTabbedPaneInterface extends JFrame {
 		this.revalidate();
 			
 	}
+	public PapotageListener getPapoteur() {
+		return this.b;
+	}
 }
 
  

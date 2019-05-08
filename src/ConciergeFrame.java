@@ -17,9 +17,10 @@ public class ConciergeFrame extends JFrame implements ActionListener{
 	private JPanel lePanel;
 	private PapotageListener selectBavard = new Bavard();
 	private JButton remove;
-	public ConciergeFrame(Concierge j) {
+	private WelcomeJFrame wj;
+	public ConciergeFrame(Concierge j, WelcomeJFrame wj) {
 		this.j=j; 
-		
+		this.wj=wj;
 		this.setLayout(null);
 		this.setBounds(0, 0, 1000, 750);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -123,6 +124,8 @@ public class ConciergeFrame extends JFrame implements ActionListener{
 		Object source = click.getSource();
 		if(source == remove) {
 			j.removeBavard(this.selectBavard.getName());
+			this.selectBavard.removeConcierge(j);
+			this.wj.closeBavardInterface(this.selectBavard);
 			this.jl.setListData(j.l.toArray());
 			this.lePanel.repaint();
 		}

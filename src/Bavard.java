@@ -94,8 +94,37 @@ public class Bavard implements PapotageListener {
 		// TODO Auto-generated method stub
 		return null;
 	}
+/*	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getMdp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public src.ArrayList<PapotageEvent> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public src.ArrayList<PapotageListener> getListLis() {
+		// TODO Auto-generated method stub
+		return null;
+	}*/
 	
 	
-	
+	public void removeConcierge(Concierge c) {
+		for (int i=0; i<this.concierge.size();i++) {
+			if (c.getName().equals(this.concierge.get(i).getName())){
+				concierge.remove(concierge.get(i));
+			}
+		}
+
+
+	}
+
 	
 }

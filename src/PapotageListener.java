@@ -8,5 +8,6 @@ public interface PapotageListener {
 	public ArrayList<PapotageEvent> getList();
 	public void generatePapotageEvent(String corps, String mess);
 	public ArrayList<PapotageListener> getListLis();
+	public void removeConcierge(Concierge c);
 	
 }
