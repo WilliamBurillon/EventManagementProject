@@ -84,16 +84,16 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		
 		
 		
-		//JScrollPane scrollPane = new JScrollPane();
-		
-		
+	
 		
 		
 		j = new JList(b.getList().toArray());
+		System.out.println("la gros taill " + b.getList().size());
 		this.setBackground(Color.WHITE);
-		j.setBounds(5,5,350,600);
+		//j.setBounds(5,5,350,600);
 		j.setFixedCellHeight(50);
 		j.setSelectedIndex(0);
+		
 		//scrollPane.setViewportView(j);
 	//	scrollPane.setBounds(5, 5, 350, 600);
 		//j.addNotify();
@@ -142,6 +142,13 @@ public class JPaneRecu extends JPanel implements ActionListener{
 			}
 			
 		});
+		this.sp = new JScrollPane(j);
+		sp.setBounds(5,5,350,600);
+		sp.setBackground(Color.BLUE);
+	//	sp.setLayout(null);
+		//sp.setVisible(true);
+		
+		//sp.add(j);
 		//JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
           //      sp,
          //      j);
@@ -158,8 +165,8 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		
 		this.add(messag);
 		this.add(but);
-		//this.add(sp);
-		this.add(j);
+		this.add(sp);
+		//this.add(j);
 		//this.add(splitPane);
 		
 	}
@@ -175,13 +182,16 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		Object source = clic.getSource();
 		if(source==this.but) 
 			
-			this.add(j);
+			
 			
 			System.out.println("avant ");
 			System.out.println("taillle  ; " + b.getList().size());
 		//	this.j.repaint();
 			this.j.setListData(b.getList().toArray());
-			
+			//this.repaint();
+			//this.validate();
+			this.jt.reload();
+			//this.sp.revalidate();
 			//sp.repaint();
 			//sp.validate();
 			

@@ -53,6 +53,10 @@ public class JTabbedPaneInterface extends JFrame {
 	public PapotageListener getPapoteur() {
 		return this.b;
 	}
+	public void reload() {
+		System.out.println("okeeeeeeeeeeeeeeeeeeeeeeeeeeeeerr");
+		this.messagesRecu.repaint();
+	}
 }
 
  
