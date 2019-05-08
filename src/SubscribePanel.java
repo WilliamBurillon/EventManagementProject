@@ -150,7 +150,7 @@ public class SubscribePanel extends JPanel implements ActionListener {
 				
 				if (j.getConcierge().get(i).getName()==jc.getSelectedItem()) {
 					c = j.getConcierge().get(i);
-					Bavard b = new Bavard(nm.getText(),pw.getText(),year.getText(),c);
+					Bavard b = new Bavard(nm.getText(),pw.getText(),year.getText(),c,null);
 					j.addBavard(c, b);
 					for (int j =0; j<c.l.size();j++) {
 					System.out.println(c.l.get(j).getName());

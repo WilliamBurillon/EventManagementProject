@@ -82,6 +82,12 @@ public class Concierge implements PapotageListener{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void setPane(PapotageListener p) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }

@@ -14,7 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-public class JPaneRecu extends JPanel implements ActionListener{
+public class JPaneRecu extends JPanel implements ActionListener,PapotageListener{
 		private JList j;
 		private PapotageListener b;
 		private JPanel messag;
@@ -199,6 +199,58 @@ public class JPaneRecu extends JPanel implements ActionListener{
 		//	this.repaint();
 			
 			System.out.println("apres");
+	}
+
+	@Override
+	public void onPapotageEvent(PapotageEvent p) {
+		// TODO Auto-generated method stub
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		this.j.setListData(b.getList().toArray());
+		//this.repaint();
+		//this.validate();
+		this.jt.reload();
+	}
+
+	@Override
+	public boolean onPapotageEventbool() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getMdp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<PapotageEvent> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void generatePapotageEvent(String corps, String mess) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ArrayList<PapotageListener> getListLis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeConcierge(Concierge c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setPane(PapotageListener p) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

@@ -112,6 +112,7 @@ public class WelcomeJFrame extends JFrame{
 		this.revalidate();
 		JTabbedPaneInterface j = new JTabbedPaneInterface(b);
 		this.Jl.add(j);
+		b.setPane(j.getMessagesRecu());		
 	}
 	public void goToConcierge() {
 		this.setContentPane(cP);

@@ -9,6 +9,18 @@ public class JTabbedPaneInterface extends JFrame {
 		
 	private JTabbedPane tabbedPane = new JTabbedPane();
 	
+	public JPaneRecu getMessagesRecu() {
+		return messagesRecu;
+	}
+	public void setMessagesRecu(JPaneRecu messagesRecu) {
+		this.messagesRecu = messagesRecu;
+	}
+	public JPaneEnvoi getMessageEnvoie() {
+		return messageEnvoie;
+	}
+	public void setMessageEnvoie(JPaneEnvoi messageEnvoie) {
+		this.messageEnvoie = messageEnvoie;
+	}
 	private PapotageListener b;
 	private JList liste;
 	private JPaneRecu messagesRecu;
